@@ -1,3 +1,8 @@
+## ChangeLog
+1. forked from jen20/libuv-cmake
+2. remove macro ${LIBUVDIR}
+3. Fix windows Visual Studio building error.
+
 ## CMake build for libuv
 
 **This is not officically supported by the libuv project, and issues encountered using this should NOT be reported to the libuv upstream project - instead report issues here.**
@@ -10,12 +15,9 @@ The position from the UV maintainers appears to be that there will not be a supp
 
 ### Usage
 
-- Add this repository as a submodules (libuv itself is pulled in as a submodule of this repository), or archive the contents of this repository and it's submodules and copy them into your own project. Always use the branch corresponding to the libuv version being targeted.
-- Add lines similar to the following to your `CMakeLists.txt` file:
+- Copy CmakeLists.txt to {your-source-directory-of-libuv}
+- Just CMake the project.
 
-```cmake    
-add_subdirectory(vendor/libuv)
-include_directories(vendor/libuv/libuv-1.6.1/include)
 ```
 - The `uv` target is produced by the `CMakeLists.txt` file - it can be linked using the following:
 
